@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yalayut"
+version = "0.1.0"
+description = "Vetted catalog of external skills, web APIs and MCP servers, ranked for each task by embedding similarity."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Sakir Cimen" }]
+keywords = ["mcp", "ai-agents", "skills", "tool-use", "semantic-search", "kutai"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Framework :: AsyncIO",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "dabidabi @ git+https://github.com/msakirc/dabidabi.git",
+    "finch @ git+https://github.com/msakirc/finch.git",
+    "husam @ git+https://github.com/msakirc/husam.git",
+    "aiohttp>=3.9.0",
+    "aiosqlite>=0.19.0",
+    "cryptography>=41.0",
+    "httpx>=0.24",
+    "python-frontmatter>=1.0",
+    "PyYAML>=6.0",
+    "yazbunu @ git+https://github.com/msakirc/yazbunu.git",
+]
+
+[project.urls]
+Homepage = "https://github.com/msakirc/yalayut"
+Repository = "https://github.com/msakirc/yalayut"
+Monorepo = "https://github.com/msakirc/kutai/tree/main/packages/yalayut"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+yalayut = ["seed/manifests/*.yaml"]
